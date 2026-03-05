@@ -24,8 +24,6 @@ The solution in this article is to build up a VRAM pool like CPU/DRAM/SSD pool l
 | Store(tokens, mask, kvcaches, slot_mapping, offset)-> None   | Store KVCaches with token ids into the VCache system. This function stores KVCaches in both VRAM and the mooncake store backend with slot mapping.        |
 |Retrieve(tokens, mask, kvcaches, slot_mapping)-> torch.Tensor | Retrieve hit KVCaches for a sequence of tokens and upload the data to the kvcaches parameter using slot mapping. This function first retrieves hit data from the VRAMpool. If no hits, it falls back to retrieve from the mooncake store backend. Returns a boolean mask indicating retrieved tokens.|
 
-## NOTE: THE PROJECT SRC IS STILL UNDER REVISION
-
 ## file organization
 **VCache**: src   
 **test**: scripts to test system functions  
